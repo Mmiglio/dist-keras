@@ -174,7 +174,7 @@ class SingleTrainer(Trainer):
         # Collect the dataframe on a single worker node.
         dataframe = dataframe.coalesce(1)
         # Cache the dataframe.
-        dataframe.cache()
+        #dataframe.cache()
         # Allocate a worker.
         worker = self.allocate_worker()
         # Set the maximum number of mini-batches.
@@ -519,7 +519,7 @@ class DistributedTrainer(Trainer):
         else:
             dataframe = dataframe.repartition(self.num_workers)
         # Cache the dataframe.
-        dataframe.cache()
+        #dataframe.cache()
         # Start the training procedure.
         self.record_training_start()
         # Iterate through the epochs.
